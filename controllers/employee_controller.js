@@ -32,21 +32,15 @@ const show = (req, res, next) => {
 // add employee to database
 const store = (req, res, next) => {
     let employee = Employee({
-        name: req.body.name,
-        designation: req.body.designation,
-        email: req.body.email,
-        phone: req.body.phone,
-        age: req.body.age
+        title: req.body.title,
+        note: req.body.note,
     }) 
-    if(req.file){
-        employee.avatar = req.file.path
-    }
     console.log(employee)
  
     employee.save()
     .then(response => {
         res.json({
-            message: 'Employee Added Successfully',
+            message: 'Note Added Successfully',
             data: response
         })
     }).catch(error => {

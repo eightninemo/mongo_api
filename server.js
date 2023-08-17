@@ -8,6 +8,7 @@ const app = express()
 const EmployeeRoute = require('./routes/employee_route')
 const AuthRoute = require('./routes/auth_route')
 
+// change connection string
 mongoose.connect('mongodb+srv://sooreoluwa:sooredatabase@cluster0.epsmb5x.mongodb.net/?retryWrites=true&w=majority', 
 {   
     useNewUrlParser: true, 

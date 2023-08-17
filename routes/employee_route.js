@@ -7,8 +7,10 @@ const authenticate = require('../middleware/authenticate')
 
 router.get('/all', authenticate, EmployeeController.index)
 router.get('/show/:employeeId', EmployeeController.show)
-router.post('/store', upload.single('avatar'), EmployeeController.store)
+router.post('/store', EmployeeController.store)
 router.put('/update/:employeeId', EmployeeController.update)
 router.delete('/remove/:employeeId', EmployeeController.destroy)
 
 module.exports = router
+
+// , upload.single('avatar')

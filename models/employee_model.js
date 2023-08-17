@@ -2,24 +2,24 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const employeeSchema = new  Schema({
-    name: {
+    title: {
         type: String
     },
-    designation: {
+    note: {
         type: String
     },
-    email: {
-        type: String
-    },
-    phone: {
-        type: String
-    },
-    age: {
-        type: Number
-    },
-    avatar: {
-        type: String
-    },
+    // email: {
+    //     type: String
+    // },
+    // phone: {
+    //     type: String
+    // },
+    // age: {
+    //     type: Number
+    // },
+    // avatar: {
+    //     type: String
+    // },
 }, {timestamps: true})
 
 const Employee = mongoose.model('Employee', employeeSchema)
