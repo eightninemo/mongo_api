@@ -1,14 +1,16 @@
 const Employee = require('../models/employee_model')
 
 // show list of employees
-const index = (req, res, next) => {
+const all = (req, res, next) => {
     Employee.find()
     .then(response => {
         res.json({
+            status: true,
             data: response
         })
     }).catch(error => {
         res.json({
+            status: false,
             message: 'An error occured'
         })
     })
@@ -92,5 +94,5 @@ const destroy = (req, res, next) => {
 }
 
 module.exports = {
-        index, show, store, update, destroy
+        all, show, store, update, destroy
 }
