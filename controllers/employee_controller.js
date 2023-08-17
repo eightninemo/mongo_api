@@ -17,6 +17,22 @@ const all = (req, res, next) => {
     })
 }
 
+// show list of employees
+const allpinned = (req, res, next) => {
+    Employee2.find()
+    .then(response => {
+        res.json({
+            status: true,
+            data: response
+        })
+    }).catch(error => {
+        res.json({
+            status: false,
+            message: 'An error occured'
+        })
+    })
+}
+
 // show employee by ID
 const show = (req, res, next) => {
     const employeeId = req.params.employeeId
@@ -118,5 +134,5 @@ const destroy = (req, res, next) => {
 }
 
 module.exports = {
-        all, show, store, update, destroy
+        all,allpinned, show, store, update, destroy
 }

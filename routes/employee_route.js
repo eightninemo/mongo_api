@@ -6,6 +6,7 @@ const upload = require('../middleware/upload')
 // const authenticate = require('../middleware/authenticate')
 
 router.get('/all', EmployeeController.all)
+router.get('/allpinned', EmployeeController.allpinned)
 router.get('/show/:employeeId', EmployeeController.show)
 router.post('/store', EmployeeController.store)
 router.put('/update/:employeeId', EmployeeController.update)
