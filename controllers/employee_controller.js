@@ -41,12 +41,14 @@ const store = (req, res, next) => {
     employee.save()
     .then(response => {
         res.json({
+            status: true,
             message: 'Note Added Successfully',
             data: response
         })
     }).catch(error => {
         console.log(error)
         res.json({
+            status: false,
             message: error
         })
     })
