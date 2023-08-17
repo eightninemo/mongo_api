@@ -1,4 +1,5 @@
 const Employee = require('../models/employee_model')
+const Employee2 = require('../models/employee2_model')
 
 // show list of employees
 const all = (req, res, next) => {
@@ -33,27 +34,50 @@ const show = (req, res, next) => {
 
 // add employee to database
 const store = (req, res, next) => {
+  var type  = req.body.type
     let employee = Employee({
         title: req.body.title,
         note: req.body.note,
         type: req.body.type,
     }) 
+    let employee2 = Employee2({
+        title: req.body.title,
+        note: req.body.note,
+        type: req.body.type,
+    }) 
     console.log(employee)
- 
-    employee.save()
-    .then(response => {
-        res.json({
-            status: true,
-            message: 'Note Added Successfully',
-            data: response
+    if(type == 'save'){
+        employee.save()
+        .then(response => {
+            res.json({
+                status: true,
+                message: 'Note Saved Successfully',
+                data: response
+            })
+        }).catch(error => {
+            console.log(error)
+            res.json({
+                status: false,
+                message: error
+            })
         })
-    }).catch(error => {
-        console.log(error)
-        res.json({
-            status: false,
-            message: error
+    }else{
+        employee2.save()
+        .then(response => {
+            res.json({
+                status: true,
+                message: 'Note Pinned Successfully',
+                data: response
+            })
+        }).catch(error => {
+            console.log(error)
+            res.json({
+                status: false,
+                message: error
+            })
         })
-    })
+    }
+    
 }
 
 // update employee by ID
