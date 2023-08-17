@@ -8,9 +8,9 @@ const employeeSchema = new  Schema({
     note: {
         type: String
     },
-    // email: {
-    //     type: String
-    // },
+    type: {
+        type: String
+    },
     // phone: {
     //     type: String
     // },

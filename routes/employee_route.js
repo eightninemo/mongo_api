@@ -13,4 +13,3 @@ router.delete('/remove/:employeeId', EmployeeController.destroy)
 
 module.exports = router
 
-// , upload.single('avatar')

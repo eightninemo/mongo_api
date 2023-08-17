@@ -34,6 +34,7 @@ const store = (req, res, next) => {
     let employee = Employee({
         title: req.body.title,
         note: req.body.note,
+        type: req.body.type,
     }) 
     console.log(employee)
  
